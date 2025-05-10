@@ -6,7 +6,7 @@ from pages.job_details_page import JobDetailsPage
 from pages.logout_page import LogoutPage
 
 
-#Invalid search Jobs - Do not have account
+#Invalid search Jobs - Do not have account previously
 def test_invalied_search_jobs(page):
     home_page = HomePage(page)
     login_page = LoginPage(page)

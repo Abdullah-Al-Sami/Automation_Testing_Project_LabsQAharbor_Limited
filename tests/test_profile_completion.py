@@ -31,8 +31,8 @@ def test_profile_completion(page):
     
     # Login with credentials
     login_page.enter_credentials(
-        "lalala@gmail.com", 
-        "Lalala@#"
+        "badhonal09@gmail.com", 
+        "badhonal09@#"
     )
     login_page.submit()
     
