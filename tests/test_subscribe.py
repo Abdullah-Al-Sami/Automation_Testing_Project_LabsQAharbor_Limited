@@ -8,7 +8,7 @@ def test_subscribe(page):
     subscribe_page.navigate()
 
     # Step 2: Enter email
-    subscribe_page.fill_form("islamsam404@gmail.com")
+    subscribe_page.fill_form("lalala@gmail.com")
 
     # Step 3: Submit
     subscribe_page.submit_subcription()

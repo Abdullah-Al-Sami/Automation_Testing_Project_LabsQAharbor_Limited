@@ -101,8 +101,8 @@ def test_remove_bookmarked_job1(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "islamsam404@gmail.com", 
-        "Islamsam404@#"
+        "lalala@gmail.com", 
+        "Lalala@#"
     )
 
     # Step 4: Submit and verify

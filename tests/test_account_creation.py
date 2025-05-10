@@ -27,10 +27,10 @@ def test_account_creation(page):
 
     # Step 5: Fill and submit form
     candidate_reg_page.fill_form(
-        username="badhonal",
-        email="badhonal09@gmail.com",
-        password="badhonal09@#", 
-        confirm_password="badhonal09@#",
+        username="samial",
+        email="sami09@gmail.com",
+        password="Sami09@#", 
+        confirm_password="Sami09@#",
     )
 
     page.wait_for_timeout(2000)  

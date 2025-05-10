@@ -24,8 +24,8 @@ def test_search_jobs(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "islamsam404@gmail.com", 
-        "Islamsam404@#"
+        "lalala@gmail.com", 
+        "Lalala@#"
     )
 
     # Step 4: Submit and verify

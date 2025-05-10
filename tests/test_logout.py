@@ -20,8 +20,8 @@ def test_logout(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "abdullah.al.sami05@gmail.com", 
-        "Abdullah.al.sami05@#"
+        "lalala@gmail.com", 
+        "Lalala@#"
     )
 
     # Step 4: Submit and verify
