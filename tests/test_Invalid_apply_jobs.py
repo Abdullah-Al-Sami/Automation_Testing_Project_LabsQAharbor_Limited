@@ -5,10 +5,9 @@ from pages.findjobs_page import FindjobsPage
 from pages.job_details_page import JobDetailsPage
 from pages.logout_page import LogoutPage
 
-
-
-# Valid Test apply job    
-def test_apply_jobs(page):
+    
+# Invalid Test apply job
+def test_Invalid_apply_jobs(page):
     home_page = HomePage(page)
     login_page = LoginPage(page)
     account_page = AccountPage(page)
@@ -25,8 +24,8 @@ def test_apply_jobs(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "islamsam404@gmail.com", 
-        "Islamsam404@#"
+        "abdullah.al.sami05@gmail.com", 
+        "Abdullah.al.sami05@#"
     )
 
     # Step 4: Submit and verify
@@ -80,4 +79,11 @@ def test_apply_jobs(page):
     print("Logout process completed successfully")
 
 
- 
+
+
+
+
+
+
+
+

@@ -10,8 +10,8 @@ TEST_CV_PATH = "tests/information/MdAbdullahAlSami.pdf"
 TEST_IMAGE_PATH = "tests/information/sami.png"
 
 
-#Valid Profile Completion - 1 [Already not created]
-def test_profile_completion(page):
+#Invalid Profile Completion - Already Created
+def test_invalid_profile_completion(page):
     # Verify test files exist before starting
     if not Path(TEST_IMAGE_PATH).exists():
         raise FileNotFoundError(f"Profile image not found at {TEST_IMAGE_PATH}")
@@ -31,8 +31,8 @@ def test_profile_completion(page):
     
     # Login with credentials
     login_page.enter_credentials(
-        "lalala@gmail.com", 
-        "Lalala@#"
+        "islamsam404@gmail.com", 
+        "Islamsam404@#"
     )
     login_page.submit()
     
@@ -47,8 +47,8 @@ def test_profile_completion(page):
 
     # Step 3: Fill in profile information
     update_profile_page.enter_credentials(
-        firstname="Md. Lal", 
-        lastname="Mia", 
+        firstname="Md. Abdullah", 
+        lastname="Al Sami", 
         mobile="+8801954596163",  
         portfolio="https://www.linkedin.com/in/md-abdullah-al-sami-3b926a24a/", 
         listenqa="Yes, heard for best SQA Industry"
@@ -71,5 +71,3 @@ def test_profile_completion(page):
     account_page.log_out()
     assert logout_page.is_at(), "Logout failed"
     print("Successfully Logged out")
-
-

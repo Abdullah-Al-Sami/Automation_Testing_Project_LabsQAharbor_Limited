@@ -1,14 +1,14 @@
 from pages.subscribe_page import Subscribe
 
-#Valid Subscribe 
-def test_subscribe(page):
+#Invaid Subscribe 
+def test_invalid_subscribe(page):
     subscribe_page = Subscribe(page)
 
     # Step 1: Navigate
     subscribe_page.navigate()
 
     # Step 2: Enter email
-    subscribe_page.fill_form("islamsam404@gmail.com")
+    subscribe_page.fill_form("abdullah.al.sami05@gmail.com")
 
     # Step 3: Submit
     subscribe_page.submit_subcription()

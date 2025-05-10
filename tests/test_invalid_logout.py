@@ -4,8 +4,8 @@ from pages.account_page import AccountPage
 from pages.logout_page import LogoutPage
 
 
-#valid Logout
-def test_logout(page):
+#Invalid Logout - do not have account
+def test_invalid_logout(page):
     home_page = HomePage(page)
     login_page = LoginPage(page)
     account_page = AccountPage(page)
@@ -20,8 +20,8 @@ def test_logout(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "abdullah.al.sami05@gmail.com", 
-        "Abdullah.al.sami05@#"
+        "qa@gmail.com", 
+        "lalal@#"
     )
 
     # Step 4: Submit and verify
@@ -42,3 +42,8 @@ def test_logout(page):
     # Step 7: Add timeout to see the result
     page.wait_for_timeout(3000)  
     print("Logout process completed successfully")
+
+
+
+
+

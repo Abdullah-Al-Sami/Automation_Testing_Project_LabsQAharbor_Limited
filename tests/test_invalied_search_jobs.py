@@ -6,9 +6,8 @@ from pages.job_details_page import JobDetailsPage
 from pages.logout_page import LogoutPage
 
 
-
-# Valid Test apply job    
-def test_apply_jobs(page):
+#Invalid search Jobs - Do not have account
+def test_invalied_search_jobs(page):
     home_page = HomePage(page)
     login_page = LoginPage(page)
     account_page = AccountPage(page)
@@ -25,8 +24,8 @@ def test_apply_jobs(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "islamsam404@gmail.com", 
-        "Islamsam404@#"
+        "qa@gmail.com", 
+        "lalal@#"
     )
 
     # Step 4: Submit and verify
@@ -63,16 +62,8 @@ def test_apply_jobs(page):
     page.wait_for_timeout(2000)  
     print("Successfully viewed job details")
 
-
-    #step 10: Apply searched jobs
-    page.wait_for_timeout(2000)  
-    find_jobs_page.apply_searched_jobs()
-    assert job_details_page.get_current_url2, "Details about job not loaded"
-    print("Current URL:", page.url)
-
     account_page.is_at()
     account_page.log_out()
-
     assert logout_page.is_at(), "Logout page not loaded"
 
     # Step 10: Add timeout to see the result
@@ -80,4 +71,6 @@ def test_apply_jobs(page):
     print("Logout process completed successfully")
 
 
- 
+
+
+

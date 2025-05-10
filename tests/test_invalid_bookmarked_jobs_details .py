@@ -2,19 +2,19 @@ from pages.home_page import HomePage
 from pages.login_page import LoginPage
 from pages.account_page import AccountPage
 from pages.findjobs_page import FindjobsPage
+from pages.bookmark_jobpage import BookmarkJobPage
 from pages.job_details_page import JobDetailsPage
 from pages.logout_page import LogoutPage
 
-
-
-# Valid Test apply job    
-def test_apply_jobs(page):
+#Invalid Book marked Jobs - Do not created Account
+def test_invalid_bookmarked_jobs_details(page):
     home_page = HomePage(page)
     login_page = LoginPage(page)
     account_page = AccountPage(page)
     find_jobs_page = FindjobsPage(page)
+    bookmark_job_page = BookmarkJobPage(page)
     job_details_page = JobDetailsPage(page)
-    logout_page = LogoutPage(page)
+    log_out_page = LogoutPage(page)
 
     # Step 1: Navigate and click sign-in
     home_page.navigate()
@@ -25,8 +25,8 @@ def test_apply_jobs(page):
 
     # Step 3: Enter credentials
     login_page.enter_credentials(
-        "islamsam404@gmail.com", 
-        "Islamsam404@#"
+        "qa@gmail.com", 
+        "lalal@#"
     )
 
     # Step 4: Submit and verify
@@ -43,41 +43,39 @@ def test_apply_jobs(page):
     assert find_jobs_page.is_at(), "Find Job page not loaded"
 
     # Step 6: Navigate and click for bookmark any jobs in findjobs page
-    find_jobs_page.fill_search_jobs(
-        search="Senior SQA Engineer",
-    )
+    find_jobs_page.bookmark_jobs()
 
-    #step 7: Verify search job to show in find jobs page
-    find_jobs_page.search_jobs()
-    page.wait_for_timeout(2000)  
-    assert find_jobs_page.is_at(), "Search job not loaded"
+    #step 7: Verify bookmark job to show in my account page
+    find_jobs_page.goto_myaccount()
+    assert account_page.is_at(), "Account page not loaded after job find job page"
     print("Current URL:", page.url)
 
-    #step 8: Verify view job details
-    find_jobs_page.details_jobs_searched()
-    page.wait_for_timeout(2000)  
-    assert job_details_page.get_current_url2, "Details about job not loaded"
+    #step 8: Verify job bookmarked to click save and view job details
+    account_page.show_bookmark_jobs()
+    assert bookmark_job_page.is_at(), "Bookmarked job not loaded"
     print("Current URL:", page.url)
 
-    #step 9: Verify job details to click save and view job details
-    page.wait_for_timeout(2000)  
-    print("Successfully viewed job details")
-
-
-    #step 10: Apply searched jobs
-    page.wait_for_timeout(2000)  
-    find_jobs_page.apply_searched_jobs()
-    assert job_details_page.get_current_url2, "Details about job not loaded"
+    #step 9: View job details
+    bookmark_job_page.view_job_details()
+    assert job_details_page.get_current_url(), "Bookmarked job details not loaded"
     print("Current URL:", page.url)
+    
 
-    account_page.is_at()
+    page.wait_for_timeout(3000)  
+    print("Bookmmarked Job viewed successfully")
+
+
+    # Step 10: Navigate and click for logout
     account_page.log_out()
 
-    assert logout_page.is_at(), "Logout page not loaded"
+    assert log_out_page.get_current_url(), "Logout page not loaded"
+    print("Current URL:", page.url)
 
-    # Step 10: Add timeout to see the result
+    #step 11: Verify logout process
     page.wait_for_timeout(3000)  
-    print("Logout process completed successfully")
+    print("Successfully Logged out")
 
 
- 
+
+
+
