@@ -1,0 +1,83 @@
+!!!!!!!!!!!!!!!!!!!!!!Hellow, This is an automation testing project on LabsQAharbor Limited Website.!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Below, I have given the all details about this project, how to run!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+Step - 1:
+Install Dependencies Requirements:
+○ Ensure Python is installed (If not already done in your case):
+○ Check Python version: python --version
+○ Check pip version: pip --version
+
+
+
+Step - 2:
+Install Playwright, pytest, and pytest-playwright: Run the following commands:
+○ pip install pytest
+○ pip install pytest-playwright
+○ pip install playwright
+
+
+
+Step - 3:
+Install browsers for Playwright: Playwright needs browser drivers, so install them:
+○ python -m playwright install
+
+
+
+Step - 4: 
+Create Folder Structure Your project structure should look like this:
+
+QAHarbor_PageObjectModel_Project
+├── pages\
+│ └── login_page.py # Page Object Model for login page (Other Class files also will be stored in the pages directory)
+├── tests\
+| |__ information (Folders to solves or stores the .png, .jpg, .pdf etc files)
+│ └── test_login.py # test file login for lo(Other functionality test files also stored in the tests directory) 
+├── conftest.py # Setup file for Playwright for the wbsites in a single .py file(optional)
+├── requirements.txt # For the dependencies requirement to the files(optional)
+
+
+
+
+Step - 5: 
+Run the Tests
+Run the tests from your project directory:
+cd _:\_your_directory where the project stored
+
+○ Single filed runs:   python -m pytest tests/test_login.py --headed (#with opening the browser window)
+○ Single filed runs:   python -m pytest tests/test_login.py  (#Without --headed, without opening the browser window)
+
+
+
+Step - 6: 
+You will see the expected Output Example:
+================================================= test session starts
+=================================================
+platform win32 -- Python 3.12.6, pytest-8.3.5, pluggy-1.5.0 -- C:\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: ___:\_your_directory
+configfile: pytest.ini
+collected 2 items
+tests/test_login.py::test_login_valid_credentials PASSED
+================================================== 2 passed in 5.75s
+================================================
+
+
+
+
+Step 7: 
+Run the Tests with more details command
+○ Run all tests together :  python -m pytest tests/
+○ Run all tests with details output : python -m pytest -v tests/
+○ Run specific test files : python -m pytest tests/test_example.py
+○ Run specific test files specific function: python -m pytest tests/test_example.py::test_example
+
+
+
+Step 8: 
+Exit the operation!!!
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Thank you, ForDownloading.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
