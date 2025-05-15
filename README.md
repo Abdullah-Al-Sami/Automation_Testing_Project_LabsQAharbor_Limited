@@ -52,15 +52,46 @@ python -m playwright install
 Your project should be organized as follows:
 
 ```
-QAHarbor_PageObjectModel_Project
-├── pages\
-│   └── login_page.py            # Page Object Model for login page (Other class files also stored here)
-├── tests\
-│   └── information              # Folder to store .png, .jpg, .pdf files
-│   └── test_login.py            # Login test file (other test files also go here)
-├── conftest.py                  # Playwright setup file (optional)
-├── requirements.txt             # File listing required dependencies (optional)
-```
+QAHarbor_PageObjectModel_Project/
+|-- pytest_cache/
+|-- pages/            # Page Object classes
+|   |-- _pycache_/
+|   |-- acc_page.py
+|   |-- account_page.py
+|   |-- bookmark_jobpage.py
+|   |-- candidate_registration_pa...
+|   |-- change_password.py
+|   |-- findjobs_page.py
+|   |-- home_page.py
+|   |-- job_details_page.py
+|   |-- login_page.py
+|   |-- logout_page.py
+|   |-- registration_page.py
+|   |-- remove_job.py
+|   |-- single_bookmark_jobpage.py
+|   |-- single_findjobs_page.py
+|   |-- single_job_details_page.py
+|   |-- social_pages.py
+|   |-- subscribe_page.py
+|   |-- update_profile_page.py
+|-- tests/            # Test cases using Page Objects
+|   |-- _pycache_/
+|   |-- information/
+|   |-- test_account_creation.py
+|   |-- test_apply_jobs.py
+|   |-- test_bookmarked_jobs_details.py
+|   |-- test_change_acc_pass.py
+|   |-- test_home_page.py
+|   |-- test_login.py
+|   |-- test_logout.py
+|   |-- test_profile_completion.py
+|   |-- test_qa_social_pages.py
+|   |-- test_remove_job.py
+|   |-- test_search_jobs.py
+|   |-- test_show_applied_jobs.py
+|   |-- test_subscribe.py
+|-- confest.py
+|-- requirements.txt
 
 ---
 
