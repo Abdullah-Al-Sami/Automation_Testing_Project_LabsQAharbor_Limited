@@ -94,6 +94,7 @@ QAHarbor_PageObjectModel_Project/
 |-- requirements.txt
 
 ---
+```
 
 ### ✅ Step 5: Run the Tests
 
